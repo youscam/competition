@@ -12,7 +12,7 @@ import ma.youscam.competition.model.enumeration.SubClass;
 @Entity
 public class Joueur {
 	@Id
-	private int bn;
+	private Long bn;
 	private String nom;
 	private String prenom;
 	private LocalDate datenaissance;
@@ -27,7 +27,7 @@ public class Joueur {
 		super();
 	}
 
-	public Joueur(int bn, String nom, String prenom, LocalDate datenaissance, Sexe sexe, SubClass subclass, Club club) {
+	public Joueur(Long bn, String nom, String prenom, LocalDate datenaissance, Sexe sexe, SubClass subclass, Club club) {
 		super();
 		this.bn = bn;
 		this.nom = nom;
@@ -38,12 +38,12 @@ public class Joueur {
 		this.club = club;
 	}
 
-	public int getBn() {
+	public Long getBn() {
 		return bn;
 	}
 
 	public void setBn(int bn) {
-		this.bn = bn;
+		this.bn = (long) bn;
 	}
 
 	public String getNom() {

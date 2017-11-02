@@ -8,17 +8,16 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Club {
-	
+
 	@Id
 	private String nom;
 	@OneToMany
 	private Set<Joueur> joueurs;
-	
-	
+
 	public Club() {
 		super();
 	}
-	
+
 	public Club(String nom, Set<Joueur> joueurs) {
 		super();
 		this.nom = nom;
@@ -41,8 +40,30 @@ public class Club {
 		this.joueurs = joueurs;
 	}
 
-	
-	
-	
+	@Override
+	public boolean equals(Object obj) {
 
+		if (this == obj)
+			return true;
+
+		if (obj == null)
+			return false;
+
+		if (getClass() != obj.getClass())
+			return false;
+
+		Club other = (Club) obj;
+		return nom != other.nom ? false : true;
+	}
+
+	@Override
+	public int hashCode() {
+	    final int prime = 31;
+	    int result = 1;
+	    result = prime * result + ((nom == null) ? 0 : nom.hashCode());
+	    result = prime * result + ((joueurs == null) ? 0 : joueurs.hashCode());
+	    return result;
+	}
+
+	
 }

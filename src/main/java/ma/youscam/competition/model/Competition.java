@@ -23,7 +23,7 @@ public class Competition {
 	@Enumerated(EnumType.STRING)
 	private SubClass subclass;
 	private Set<Secore> secores;
-	
+	private transient ResultClubsCompetition resultClubCompetition;
 	public Competition() {
 		super();
 		this.sexe = Sexe.MASCULIN;
@@ -76,7 +76,11 @@ public class Competition {
 	public void setSubclass(SubClass subclass) {
 		this.subclass = subclass;
 	}
-	
+
+	public ResultClubsCompetition getResultClubCompetition() {
+		this.resultClubCompetition = new ResultClubsCompetition(secores);
+		return resultClubCompetition;
+	}
 	
 
 }
