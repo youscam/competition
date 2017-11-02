@@ -2,16 +2,23 @@ package ma.youscam.competition.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
 import ma.youscam.competition.model.enumeration.Sexe;
 import ma.youscam.competition.model.enumeration.SubClass;
 
+@Entity
 public class Joueur {
+	@Id
 	private int bn;
 	private String nom;
 	private String prenom;
 	private LocalDate datenaissance;
 	private Sexe sexe;
 	private SubClass subclass;
+	@ManyToOne
 	private Club club;
 	
 	

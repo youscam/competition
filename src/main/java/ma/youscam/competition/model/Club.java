@@ -2,8 +2,16 @@ package ma.youscam.competition.model;
 
 import java.util.Set;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Club {
+	
+	@Id
 	private String nom;
+	@OneToMany
 	private Set<Joueur> joueurs;
 	
 	
