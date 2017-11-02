@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Course {
@@ -13,7 +14,9 @@ public class Course {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String lieu;
+	@OneToMany
 	private Set<Joueur> joueurs;
+	@OneToMany
 	private Set<Competition> competitions;//normalement 8 competition
 	
 	public Course() {

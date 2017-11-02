@@ -19,9 +19,9 @@ public class Competition {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	@Enumerated(EnumType.STRING)
-	private final Sexe sexe;
+	private Sexe sexe;
 	@Enumerated(EnumType.STRING)
-	private final SubClass subclass;
+	private SubClass subclass;
 	private Set<Secore> secores;
 	
 	public Competition() {
@@ -67,6 +67,14 @@ public class Competition {
 	
 	public SubClass getSubclass() {
 		return subclass;
+	}
+
+	public void setSexe(Sexe sexe) {
+		this.sexe = sexe;
+	}
+
+	public void setSubclass(SubClass subclass) {
+		this.subclass = subclass;
 	}
 	
 	

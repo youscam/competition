@@ -12,8 +12,8 @@ public class Secore {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private final LocalDate timing;
-	private final Joueur joueur;
+	private LocalDate timing;
+	private Joueur joueur;
 	
 	public Secore(LocalDate timing, Joueur joueur) {
 		super();
@@ -33,6 +33,22 @@ public class Secore {
 
 	public Joueur getJoueur() {
 		return joueur;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setTiming(LocalDate timing) {
+		this.timing = timing;
+	}
+
+	public void setJoueur(Joueur joueur) {
+		this.joueur = joueur;
 	}
 	
 
