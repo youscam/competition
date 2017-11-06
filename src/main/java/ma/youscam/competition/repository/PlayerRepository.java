@@ -3,9 +3,9 @@ package ma.youscam.competition.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import ma.youscam.competition.model.Joueur;
+import ma.youscam.competition.model.Player;
 
 @Repository
-public interface JoueurRepository extends JpaRepository<Joueur, Long> {
+public interface PlayerRepository extends JpaRepository<Player, Long> {
 
 }

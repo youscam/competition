@@ -8,31 +8,31 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Secore {
+public class Secore implements Comparable<Secore> {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private LocalDate timing;
-	private Joueur joueur;
+	private Player player;
 	
-	public Secore(LocalDate timing, Joueur joueur) {
+	public Secore(LocalDate timing, Player player) {
 		super();
 		this.timing = timing;
-		this.joueur = joueur;
+		this.player = player;
 	}
 
 	public Secore() {
 		super();
 		this.timing=null;
-		this.joueur=null;
+		this.player=null;
 	}
 
 	public LocalDate getTiming() {
 		return timing;
 	}
 
-	public Joueur getJoueur() {
-		return joueur;
+	public Player getJoueur() {
+		return player;
 	}
 
 	public Long getId() {
@@ -47,8 +47,13 @@ public class Secore {
 		this.timing = timing;
 	}
 
-	public void setJoueur(Joueur joueur) {
-		this.joueur = joueur;
+	public void setJoueur(Player player) {
+		this.player = player;
+	}
+
+	@Override
+	public int compareTo(Secore o) {
+		return this.getTiming().compareTo(o.getTiming());
 	}
 	
 

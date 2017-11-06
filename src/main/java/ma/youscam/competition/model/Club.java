@@ -12,16 +12,16 @@ public class Club {
 	@Id
 	private String nom;
 	@OneToMany
-	private Set<Joueur> joueurs;
+	private Set<Player> players;
 
 	public Club() {
 		super();
 	}
 
-	public Club(String nom, Set<Joueur> joueurs) {
+	public Club(String nom, Set<Player> players) {
 		super();
 		this.nom = nom;
-		this.joueurs = joueurs;
+		this.players = players;
 	}
 
 	public String getNom() {
@@ -32,12 +32,12 @@ public class Club {
 		this.nom = nom;
 	}
 
-	public Set<Joueur> getJoueurs() {
-		return joueurs;
+	public Set<Player> getJoueurs() {
+		return players;
 	}
 
-	public void setJoueurs(Set<Joueur> joueurs) {
-		this.joueurs = joueurs;
+	public void setJoueurs(Set<Player> players) {
+		this.players = players;
 	}
 
 	@Override
@@ -61,7 +61,7 @@ public class Club {
 	    final int prime = 31;
 	    int result = 1;
 	    result = prime * result + ((nom == null) ? 0 : nom.hashCode());
-	    result = prime * result + ((joueurs == null) ? 0 : joueurs.hashCode());
+	    result = prime * result + ((players == null) ? 0 : players.hashCode());
 	    return result;
 	}
 

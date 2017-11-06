@@ -1,6 +1,9 @@
-package ma.youscam.competition.model;
+package ma.youscam.competition.service;
 
 import java.util.Set;
+
+import ma.youscam.competition.model.Club;
+import ma.youscam.competition.model.Secore;
 
 public class ResultClubsCompetition {
 

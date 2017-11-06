@@ -1,14 +1,17 @@
-package ma.youscam.competition.model;
+package ma.youscam.competition.service;
 
 import java.util.Set;
+
+import ma.youscam.competition.model.Club;
+import ma.youscam.competition.model.Player;
 
 public class ResultClub {
 	private Club club;
 	private int position;
 	private int note;
-	private Set<Joueur> joueursgagnes;
+	private Set<Player> joueursgagnes;
 	
-	public ResultClub(Club club, int position, int note, Set<Joueur> joueursgagnes) {
+	public ResultClub(Club club, int position, int note, Set<Player> joueursgagnes) {
 		super();
 		this.club = club;
 		this.position = position;
@@ -40,11 +43,11 @@ public class ResultClub {
 		this.note = note;
 	}
 
-	public Set<Joueur> getJoueursgagnes() {
+	public Set<Player> getJoueursgagnes() {
 		return joueursgagnes;
 	}
 
-	public void setJoueursgagnes(Set<Joueur> joueursgagnes) {
+	public void setJoueursgagnes(Set<Player> joueursgagnes) {
 		this.joueursgagnes = joueursgagnes;
 	}
 	

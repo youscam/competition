@@ -10,7 +10,7 @@ import ma.youscam.competition.model.enumeration.Sexe;
 import ma.youscam.competition.model.enumeration.SubClass;
 
 @Entity
-public class Joueur {
+public class Player {
 	@Id
 	private Long bn;
 	private String nom;
@@ -23,11 +23,11 @@ public class Joueur {
 	
 	
 	
-	public Joueur() {
+	public Player() {
 		super();
 	}
 
-	public Joueur(Long bn, String nom, String prenom, LocalDate datenaissance, Sexe sexe, SubClass subclass, Club club) {
+	public Player(Long bn, String nom, String prenom, LocalDate datenaissance, Sexe sexe, SubClass subclass, Club club) {
 		super();
 		this.bn = bn;
 		this.nom = nom;

@@ -14,8 +14,7 @@ public class Course {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String lieu;
-	@OneToMany
-	private Set<Joueur> joueurs;
+	
 	@OneToMany
 	private Set<Competition> competitions;//normalement 8 competition
 	
@@ -23,11 +22,10 @@ public class Course {
 		super();
 	}
 
-	public Course(Long id, String lieu, Set<Joueur> joueurs, Set<Competition> competitions) {
+	public Course(Long id, String lieu, Set<Competition> competitions) {
 		super();
 		this.id = id;
 		this.lieu = lieu;
-		this.joueurs = joueurs;
 		this.competitions = competitions;
 	}
 
@@ -42,12 +40,6 @@ public class Course {
 	}
 	public void setLieu(String lieu) {
 		this.lieu = lieu;
-	}
-	public Set<Joueur> getJoueurs() {
-		return joueurs;
-	}
-	public void setJoueurs(Set<Joueur> joueurs) {
-		this.joueurs = joueurs;
 	}
 
 	public Set<Competition> getCompetitions() {
